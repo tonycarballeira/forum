@@ -15,6 +15,14 @@ class ForumThreadsController < ApplicationController
 	end
 
 	def create
+		@forum_thread = current_user.forum_threads.new forum_thread_params
+		@forum_thread.forum_posts.first.user_id = current_user.id
+
+		if @forum_thread.save
+			redirect_to @forum_thread
+		else
+			render action: :new
+		end
 	end
 
 	private
@@ -22,4 +30,7 @@ class ForumThreadsController < ApplicationController
 		def set_fourm_thread
 			@forum_thread = ForumThread.find(params[:id])
 		end
+
+		def forum_thread_params
+			params.require(:forum_thread).permit(:subject, forum_posts_attributes: [:body])
 end
