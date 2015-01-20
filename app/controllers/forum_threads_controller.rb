@@ -33,4 +33,5 @@ class ForumThreadsController < ApplicationController
 
 		def forum_thread_params
 			params.require(:forum_thread).permit(:subject, forum_posts_attributes: [:body])
+		end
 end
