@@ -5,6 +5,6 @@ class ForumPost < ActiveRecord::Base
 	validates :body, presence: true
 
 	def send_notifications!
-		forum_thread.
+		users = forum_thread.users.uniq - [user]
 	end
 end
