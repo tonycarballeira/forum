@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+ .forum_post {
+ 	border-top: 1px solid #ccc;
+ }
