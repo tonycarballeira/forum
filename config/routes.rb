@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :forum_threads do
     resources :forum_posts, module: :forum_threads
+      resource :like
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
