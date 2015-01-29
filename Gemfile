@@ -30,7 +30,7 @@ gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'local_time'
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+gem 'refile'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
